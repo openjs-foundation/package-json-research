@@ -1,4 +1,4 @@
-# package.json Research Hub
+# package.json research
 
 ## Goal
 
