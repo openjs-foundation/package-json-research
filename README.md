@@ -10,7 +10,9 @@ A research analysis on the usage of `package.json` throughout the entire JavaScr
 
 Within the `research` directory are a collection of markdown files each containing the analysis for one or more top-level `package.json` properties. The file, [package-json.md][package-json], contains a property research index.
 
-To contribute new research:
+Research should primarily focus on documenting the rules of a property's value. The analysis should avoid details regarding _how_ the value will be used by various tools. For example, the `dependencies` property has a number of ways a dependency can be included. Beyond the standard SemVer value, some tools also allow for various workspace specific syntax. The research for this property should include details regarding all the different ways a dependency could be listed, but not how a tool will necessarily resolve the dependency.
+
+### Contributing New Research:
 - Make sure that an analysis has not already been conducted on the property or properties you are analyzing.
   - Check the index in [package-json.md][package-json].
   - Check in progress pull requests.
@@ -24,7 +26,7 @@ To contribute new research:
   - The PR title should follow the format: `[research] Property: <property>` or `[research] Properties: <property-1>, <property-2>`.
 - Once your research is complete, mark the PR as "ready to review".
 
-To contribute to existing research:
+### Contributing to Existing Research:
 - Open a PR with the title `[research] Edit: <file-name.md>`.
 
 [package-json]: <./research/package-json.md>
