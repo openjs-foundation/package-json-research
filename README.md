@@ -21,7 +21,8 @@ To contribute new research:
     - The file title should use [kebab-case](https://www.freecodecamp.org/news/programming-naming-conventions-explained/#what-is-kebab-case).
   - Add the property or properties and the new file to the index in [package-json.md][package-json].
     - Use reference links so they can be reused throughout the file reliably.
-  - The PR title should follow the format: `[research] Property: <property>` or `[research] Properties: <property-1>, <property-2>`.
+  - The PR title should follow the format: `Property: <property>` or `Properties: <property-1>, <property-2>`.
+  - The PR should have the label `research` (if you cannot add labels a contributor will)
 - Once your research is complete, mark the PR as "ready to review".
 
 To contribute to existing research:
