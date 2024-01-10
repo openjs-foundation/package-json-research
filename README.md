@@ -10,7 +10,11 @@ A research analysis on the usage of `package.json` throughout the entire JavaScr
 
 Within the `research` directory are a collection of markdown files each containing the analysis for one or more top-level `package.json` properties. The file, [package-json.md][package-json], contains a property research index.
 
-Research should primarily focus on documenting the rules of a property's value. The analysis should avoid details regarding _how_ the value will be used by various tools. For example, the `dependencies` property has a number of ways a dependency can be included. Beyond the standard SemVer value, some tools also allow for various workspace specific syntax. The research for this property should include details regarding all the different ways a dependency could be listed, but not how a tool will necessarily resolve the dependency.
+Research should primarily focus on a property's existing rule-set and use-cases. Details should be presented in such a way to not infer bias to any single tool; however, since many tools share the same behavior, those details can be presented as fact.
+
+For example, the `dependencies` property has a number of ways a dependency can be specified. From using SemVer, workspace syntax, or even specifying a git link, many package manager tools will resolve the value in a similar way (though the lockfile output may be unique).
+
+Research should accurately and clearly declare when it is presenting tool-specific behavior about a certain package.json property.
 
 ### Contributing New Research:
 - Make sure that an analysis has not already been conducted on the property or properties you are analyzing.
