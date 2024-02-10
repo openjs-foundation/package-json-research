@@ -28,7 +28,7 @@ Analysis of the `name` property
 ### npm
 
 - Installing a scoped package saves it to the scoped folder by the same name (including the `@`, excluding the `/`).
-  - Example: Both `@scope/pkg-1` and `@scope/pkg-2` would be installed to the `@scope` directory.
+  - Example: Both `@scope/pkg-1` and `@scope/pkg-2` would be installed to the `node_modules/@scope` directory.
 - If the `@` is omitted, npm will automatically attempt to install the package from [GitHub Packages][github-packages].
 - All npm users have their username reserved as a scope.
   - Example: User `jack123` has the scope `@jack123` reserved specifically for themselves.
