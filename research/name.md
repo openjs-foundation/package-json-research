@@ -5,7 +5,10 @@ Analysis of the `name` property
 ## Analysis
 
 - The `name` and `version` together form an identifier that is assumed to be completely unique.
+  - In practice, the unique identifier for a package is also comprised of its registry. It is valid to have two packages with the same `name` and `version`, except one must be aliased so that the package manager can correctly resolve its registry value.
 - The `name` property is optional if the package will not be published.
+  - Generally, it is also best practice to specify the [`"private": true`](./private.md) property so that the package is not accidentally published.
+  - > [TODO: Is `name` actually optional?](https://github.com/openjs-foundation/package-json-research/issues/9)
 - It must be less than or equal to 214 characters (including scope)
 - The names of scoped packages can begin with a dot or an underscore. This is not permitted without a scope.
 - It cannot contain uppercase letters
@@ -29,7 +32,7 @@ Analysis of the `name` property
 
 - Installing a scoped package saves it to the scoped folder by the same name (including the `@`, excluding the `/`).
   - Example: Both `@scope/pkg-1` and `@scope/pkg-2` would be installed to the `node_modules/@scope` directory.
-- If the `@` is omitted, npm will automatically attempt to install the package from [GitHub Packages][github-packages].
+- If the `@` is omitted, npm will automatically attempt to install the package from GitHub.
 - All npm users have their username reserved as a scope.
   - Example: User `jack123` has the scope `@jack123` reserved specifically for themselves.
 - Similarly, npm requires other scopes (non-username) to be registered first as an npm organization, then permitted users of that organization can publish to that scope.
@@ -39,7 +42,9 @@ Analysis of the `name` property
   - One registry can host multiple scopes.
 
 ## Sources
-- npm's official documentation for the `name` field: https://docs.npmjs.com/cli/configuring-npm/package-json#name
-- npm's documentation for Scope: https://docs.npmjs.com/cli/using-npm/scope
 
-[github-packages]: <https://docs.github.com/en/packages>
+[^1^]: <https://docs.npmjs.com/cli/configuring-npm/package-json#name>
+
+- ^1^npm `name` field documentation: https://docs.npmjs.com/cli/configuring-npm/package-json#name
+- ^2^npm **Scope** documentation: https://docs.npmjs.com/cli/using-npm/scope
+- ^3^npm `install` command documentation: https://docs.npmjs.com/cli/commands/npm-install
