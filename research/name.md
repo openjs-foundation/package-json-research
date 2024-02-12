@@ -4,16 +4,16 @@ Analysis of the `name` property
 
 ## Analysis
 
-- The `name` and `version` together form an identifier that is assumed to be completely unique.
+- The `name` and `version` together form an identifier that is assumed to be completely unique<sup>[1]</sup>
   - In practice, the unique identifier for a package is also comprised of its registry. It is valid to have two packages with the same `name` and `version`, except one must be aliased so that the package manager can correctly resolve its registry value.
-- The `name` property is optional if the package will not be published.
+- The `name` property is optional if the package will not be published.<sup>[1]</sup>
   - Generally, it is also best practice to specify the [`"private": true`](./private.md) property so that the package is not accidentally published.
   - > [TODO: Is `name` actually optional?](https://github.com/openjs-foundation/package-json-research/issues/9)
-- It must be less than or equal to 214 characters (including scope)
+- It must be less than or equal to 214 characters (including scope)<sup>[1]</sup>
 - The names of scoped packages can begin with a dot or an underscore. This is not permitted without a scope.
-- It cannot contain uppercase letters
+- It cannot contain uppercase letters<sup>[1]</sup>
   - Historically, uppercase characters were allowed, but npm enforces all new packages are lowercase only
-- It must contain only URL-safe characters
+- It must contain only URL-safe characters<sup>[1]</sup>
   - > [TODO: What are "URL-safe characters"?](https://github.com/openjs-foundation/package-json-research/issues/4)
     > - Is this based on the WHATWG URL specification or something else?
     > - Relevant stackoverflow: https://stackoverflow.com/questions/695438/what-are-the-safe-characters-for-making-urls
@@ -41,10 +41,6 @@ Analysis of the `name` property
   - One scope must only ever point to one registry.
   - One registry can host multiple scopes.
 
-## Sources
-
-[^1^]: <https://docs.npmjs.com/cli/configuring-npm/package-json#name>
-
-- ^1^npm `name` field documentation: https://docs.npmjs.com/cli/configuring-npm/package-json#name
-- ^2^npm **Scope** documentation: https://docs.npmjs.com/cli/using-npm/scope
-- ^3^npm `install` command documentation: https://docs.npmjs.com/cli/commands/npm-install
+[1]: <https://docs.npmjs.com/cli/configuring-npm/package-json#name>
+[2]: <https://docs.npmjs.com/cli/using-npm/scope>
+[3]: <https://docs.npmjs.com/cli/commands/npm-install>
