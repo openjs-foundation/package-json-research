@@ -41,6 +41,12 @@ Analysis of the `name` property
   - One scope must only ever point to one registry.
   - One registry can host multiple scopes.
 
+## Sources
+
+1. [npm `name` field documentation][1]
+2. [npm _Scope_ concept documentation][2]
+3. [npm `install` command documentation][3]
+
 [1]: <https://docs.npmjs.com/cli/configuring-npm/package-json#name>
 [2]: <https://docs.npmjs.com/cli/using-npm/scope>
 [3]: <https://docs.npmjs.com/cli/commands/npm-install>
