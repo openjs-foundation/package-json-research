@@ -10,9 +10,9 @@ Analysis of the `name` property
   - Generally, it is also best practice to specify the [`"private": true`](./private.md) property so that the package is not accidentally published.
   - > [TODO: Is `name` actually optional?](https://github.com/openjs-foundation/package-json-research/issues/9)
 - It must be less than or equal to 214 characters (including scope)<sup>[1]</sup>
-- The names of scoped packages can begin with a dot or an underscore. This is not permitted without a scope.
+- The names of scoped packages can begin with a dot or an underscore. This is not permitted without a scope.<sup>[1]</sup>
 - It cannot contain uppercase letters<sup>[1]</sup>
-  - Historically, uppercase characters were allowed, but npm enforces all new packages are lowercase only
+  - Historically, uppercase characters were allowed, but npm enforces all new packages are lowercase only<sup>[1]</sup>
 - It must contain only URL-safe characters<sup>[1]</sup>
   - > [TODO: What are "URL-safe characters"?](https://github.com/openjs-foundation/package-json-research/issues/4)
     > - Is this based on the WHATWG URL specification or something else?
@@ -21,22 +21,22 @@ Analysis of the `name` property
 
 ### Scope
 
-- While all packages have a name, some also have a scope.
-- A scope follows the same rules as a name (URL-safe characters, no leading dots or underscores).
+- While all packages have a name, some also have a scope.<sup>[2]</sup>
+- A scope follows the same rules as a name (URL-safe characters, no leading dots or underscores).<sup>[2]</sup>
 - When used in package names, scopes are preceded by an `@` and followed by a `/`.
-  - Example: `@scope/pkg`
+  - Example: `@scope/pkg`<sup>[2]</sup>
 
 ## Platform Specific Behavior
 
 ### npm
 
-- Installing a scoped package saves it to the scoped folder by the same name (including the `@`, excluding the `/`).
+- Installing a scoped package saves it to the scoped folder by the same name (including the `@`, excluding the `/`).<sup>[2]</sup>
   - Example: Both `@scope/pkg-1` and `@scope/pkg-2` would be installed to the `node_modules/@scope` directory.
-- If the `@` is omitted, npm will automatically attempt to install the package from GitHub.
-- All npm users have their username reserved as a scope.
+- If the `@` is omitted, npm will automatically attempt to install the package from GitHub.<sup>[3]</sup>
+- All npm users have their username reserved as a scope.<sup>[2]</sup>
   - Example: User `jack123` has the scope `@jack123` reserved specifically for themselves.
-- Similarly, npm requires other scopes (non-username) to be registered first as an npm organization, then permitted users of that organization can publish to that scope.
-- Scopes can be associated with a registry.
+- Similarly, npm requires other scopes (non-username) to be registered first as an npm organization, then permitted users of that organization can publish to that scope.<sup>[2]</sup>
+- Scopes can be associated with a registry.<sup>[2]</sup>
   - `npm config set <Scope>:registry <Registry URL>` or `npm login --registry=<Registry URL> --scope=<Scope>` (`<Scope>` must include the `@` symbol).
   - One scope must only ever point to one registry.
   - One registry can host multiple scopes.
