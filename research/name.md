@@ -40,6 +40,13 @@ Analysis of the `name` property
   - `npm config set <Scope>:registry <Registry URL>` or `npm login --registry=<Registry URL> --scope=<Scope>` (`<Scope>` must include the `@` symbol).
   - One scope must only ever point to one registry.
   - One registry can host multiple scopes.
+- Observations from npm@10.8.2:
+  - `npm install` installs dependencies listed in the current `package.json`.
+  - `npm install ./some/folder` will fail if `some/folder/package.json` is missing a `name`.
+  - `npm install alias@./some/folder` can install even if `./some/folder/package.json` does not exist.
+  - `npm install alias@./some/folder --install-links` can install even if `./some/folder/package.json` does not have a `name` nor `version`.
+  - `npm publish` and `npm pack` require both `name` and `version`.
+  - `npm view` and `npm docs`, when run inside a directory with a `package.json`, show information about the latest published version of the package with matching name on `npm` (even if unrelated). This suggests that even unpublished packages should have globally unique names (e.g. by using a scoped name).
 
 ### Node.js
 
