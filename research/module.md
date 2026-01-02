@@ -24,7 +24,6 @@ The Node docs [mention this field](https://github.com/nodejs/node/blob/9edf4a085
   - [Esbuild](https://github.com/evanw/esbuild/blob/332727499e62315cff4ecaff9fa8b86336555e46/internal/resolver/resolver.go#L23-L55): `browser`, `module`, `main`
   - [Webpack](https://webpack.js.org/configuration/resolve/#resolvemainfields): `browser`, `module`, `main`
 
-
 [^1]: https://yarnpkg.com/configuration/manifest#module
 [^2]: [rollup](https://github.com/rollup/plugins/blob/8550c4b1925b246adbd3af48ed0e5f74f822c951/packages/node-resolve/README.md?plain=1#L126-L132), [webpack](https://github.com/webpack/webpack/blob/09543e7d8e0e7dd1703207193bcc3c3252874636/declarations/WebpackOptions.d.ts#L1619-L1622), [vite](https://github.com/vitejs/vite/blob/561b940f6f963fbb78058a6e23b4adad53a2edb9/docs/config/shared-options.md?plain=1#L142-L147)
 [^3]: https://github.com/DefinitelyTyped/DefinitelyTyped/blob/78c20f65b205e1c6af590a685921aeb796747ee4/types/npmcli__package-json/index.d.ts#L365-L369
